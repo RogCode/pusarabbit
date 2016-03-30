@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: /app
+    destination: /var/www/html
+  - source: /scripts/bash
+    destination: /var/cache/pusarabbit.com
+hooks:
+  BeforeInstall :
+    - location: scripts/appspec.sh
+      timeout: 300
+      runas: root
